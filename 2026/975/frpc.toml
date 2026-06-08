@@ -1,0 +1,33 @@
+serverAddr = "frps.freeluck.tech"
+serverPort = 443
+#auth.token = "yourtoken" 
+
+Transport.protocol = "wss"
+
+[[proxies]]
+name = "test-web"
+type = "http"
+localIP = "192.168.0.1"
+localPort = 80
+customDomains = ["router.freeluck.one"]
+
+[[proxies]]
+name = "test-web_tls"
+type = "https"
+#localIP = "127.0.0.1"
+localPort = 443
+customDomains = ["softether.freeluck.one"]
+
+[[proxies]]
+name = "test-ssh"
+type = "tcp"
+localIP = "192.168.0.1"
+localPort = 22
+remotePort = 2000
+
+[[proxies]]
+name = "test-rdp"
+type = "tcp"
+#localIP = "127.0.0.1"
+localPort = 3389
+remotePort = 3000
