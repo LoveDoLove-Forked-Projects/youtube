@@ -1,0 +1,17 @@
+serverAddr = "frps.freeluck.tech"
+serverPort = 443
+
+transport.protocol = "wss"
+
+featureGates = { VirtualNet = true }
+virtualNet.address = "100.86.0.2/24"
+
+[[visitors]]
+name = "vnet-visitor"
+type = "xtcp"
+serverName = "vnet-server"
+secretKey = "your-secret-key"
+bindPort = -1
+[visitors.plugin]
+type = "virtual_net"
+destinationIP = "100.86.0.1"
