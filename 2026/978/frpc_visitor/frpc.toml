@@ -1,0 +1,17 @@
+serverAddr = "home-frontier.tail4b99b.ts.net"
+serverPort = 443
+
+transport.protocol = "wss"
+
+featureGates = { VirtualNet = true }
+virtualNet.address = "fe00::2/48"
+
+[[visitors]]
+name = "vnet-visitor"
+type = "xtcp"
+serverName = "vnet-server"
+secretKey = "your-secret-key"
+bindPort = -1
+[visitors.plugin]
+type = "virtual_net"
+destinationIP = "fe00::1"
